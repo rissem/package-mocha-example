@@ -23,4 +23,4 @@ Package.on_test(function(api, where){
 
 To run your tests
 
-`meteor test-packages --driver-package practicalmeteor:mocha-web-driver fake:asteroid`
+`meteor test-packages --driver-package practicalmeteor:mocha-web-driver [package name]`
