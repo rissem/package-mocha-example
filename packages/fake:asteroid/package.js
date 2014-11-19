@@ -9,15 +9,18 @@ Package.describe({
 //Npm.depends({chai: "1.9.0"});
 
 Package.on_use(function (api, where) {
-  api.add_files(['server.js'], "server");
-  api.add_files(['client.js'], "client");
+  api.addFiles(['server.js'], "server");
+  api.addFiles(['client.js'], "client");
+  api.addFiles(['common.js'], ["client", "server"]);
 });
 
 
 Package.on_test(function(api, where){
   api.use("mike:mocha");
-  api.add_files(['server.js'], "server");
-  api.add_files(['client.js'], "client");
-  api.add_files(['serverTest.js'], "server");
-  api.add_files(['clientTest.js'], "client");
+  api.addFiles(['server.js'], "server");
+  api.addFiles(['client.js'], "client");
+  api.addFiles(['common.js'], ["client", "server"]);
+  api.addFiles(['serverTest.js'], "server");
+  api.addFiles(['clientTest.js'], "client");
+  api.addFiles(['commonTest.js'], ["client", "server"]);
 });

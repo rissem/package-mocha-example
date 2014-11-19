@@ -1,8 +1,9 @@
-console.log("running client test");
-
-describe("Group", function(){
-  it("is a simple test", function(){
-    console.log("said simple test should pass");
+describe("Asteroid", function(){
+  it("has a working client", function(){
     chai.assert(true, "TRUTH");
   });
+
+  // it("fails failing tests", function(){
+  //   chai.assert(false, "FALSE ASSERTION");
+  // })
 });
