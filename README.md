@@ -7,13 +7,11 @@ Example app showing how mocha can be used to test Meteor packages
 
 ## Getting Started
 
-For now you have to work from a [metoer-mocha-web fork](https://github.com/mad-eye/meteor-mocha-web/tree/packageTest) Put this project into your meteor packages directory, but don't add the package (it will only be used for testing)
-
 To include mocha package tests, add an on_test block like the following
 
 ```javascript
 Package.on_test(function(api, where){
-  api.use("mike:mocha");
+  api.use("mike:mocha-package");
   api.add_files(['server.js'], "server");
   api.add_files(['client.js'], "client");
   api.add_files(['serverTest.js'], "server");
@@ -22,7 +20,7 @@ Package.on_test(function(api, where){
 ```
 
 Here are a few example tests to get you started
-```javaascript
+```javascript
 describe("Comet library", function(){
   it("knows how to say hello world", function(){
     chai.assert(true, "working commoners");
@@ -46,11 +44,13 @@ describe("Comet library", function(){
 ```
 
 For more examples check out some of the examples
-[TODO]
-
+https://github.com/rissem/package-mocha-example/blob/master/packages/fake:asteroid/clientTest.js
+https://github.com/rissem/package-mocha-example/blob/master/packages/fake:asteroid/commonTest.js
+https://github.com/rissem/package-mocha-example/blob/master/packages/fake:asteroid/serverTest.js
+https://github.com/rissem/package-mocha-example/blob/master/packages/fake:comet/commonTest.js
 
 To run your tests
 
 `meteor test-packages --driver-package mike:pkgtest [package name]`
 
-#### This project to make mike:mocha work with packages is sponsored by Respond.ly
+#### This project is sponsored by Respond.ly
