@@ -21,6 +21,36 @@ Package.on_test(function(api, where){
 });
 ```
 
+Here are a few example tests to get you started
+```javaascript
+describe("Comet library", function(){
+  it("knows how to say hello world", function(){
+    chai.assert(true, "working commoners");
+  });
+
+  // it("asynchronous test that never returns", function(done){
+  //   console.log("Ho Hum");
+  // });
+
+  it("asynchronous test that does return eventually", function(done){
+    // console.log("Ho Hum");
+    Meteor.setTimeout(function(){
+      done();
+    }, 1000);
+  });
+
+  it("imports PI correctly", function(){
+    chai.assert(Package['fake:untested'].PI > 3.1, "PI IS GOOD");
+  });
+});
+```
+
+For more examples check out some of the examples
+[TODO]
+
+
 To run your tests
 
-`meteor test-packages --driver-package practicalmeteor:mocha-web-driver [package name]`
+`meteor test-packages --driver-package mike:pkgtest [package name]`
+
+#### This project to make mike:mocha work with packages is sponsored by Respond.ly

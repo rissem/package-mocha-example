@@ -1,8 +1,10 @@
 Package.describe({
-  name: 'fake:asteroid',
-  summary: "a purely illustrative package",
+  name: 'fake:comet',
+  summary: "comet - a purely illustrative package",
   version: "0.0.1"
 });
+
+Npm.depends({'snappy': '3.0.4'});
 
 //TODO break this out into a separate package and depend weakly
 //Require npm assertion library if it doesn't exist..
@@ -16,11 +18,11 @@ Package.on_use(function (api, where) {
 
 
 Package.on_test(function(api, where){
+  api.use("fake:untested");
   api.use("mike:mocha-package");
   api.addFiles(['server.js'], "server");
   api.addFiles(['client.js'], "client");
   api.addFiles(['common.js'], ["client", "server"]);
-  api.addFiles(['serverTest.js'], "server");
-  api.addFiles(['clientTest.js'], "client");
   api.addFiles(['commonTest.js'], ["client", "server"]);
 });
+

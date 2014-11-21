@@ -3,18 +3,20 @@ describe("Asteroid library", function(){
     chai.assert(true, "working commoners");
   });
 
-  it("asynchronous test that never returns", function(done){
-    console.log("Ho Hum");
-  });
-  
-  it("asynchronous test that does return", function(done){
-    console.log("Ho Hum");
-    done();
+  describe.client("Client", function(){
+    it("asynchronous test that never returns", function(done){
+      console.log("Ho Hum");
+    });
+  })
+
+  describe("well behaved asynchronous test", function(){
+    it("asynchronous test that does return", function(done){
+      // console.log("Ho Hum");
+      done();
+    });
   });
 
-  // it("has common code that fails", function(){
-  //   chai.assert(false, "failing common code");
-  // })
-
-  
+  it("has common code that fails", function(){
+    chai.assert(false, "failing common code");
+  })
 });
