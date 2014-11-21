@@ -19,7 +19,7 @@ Package.on_use(function (api, where) {
 
 Package.on_test(function(api, where){
   api.use("fake:untested");
-  api.use("mike:mocha-package@0.4.5");
+  api.use("mike:mocha-package@0.4.7");
   api.addFiles(['server.js'], "server");
   api.addFiles(['client.js'], "client");
   api.addFiles(['common.js'], ["client", "server"]);

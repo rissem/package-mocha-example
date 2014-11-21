@@ -11,7 +11,7 @@ To include mocha package tests, add an on_test block like the following
 
 ```javascript
 Package.on_test(function(api, where){
-  api.use("mike:mocha-package");
+  api.use("mike:mocha-package@0.4.7");
   api.add_files(['server.js'], "server");
   api.add_files(['client.js'], "client");
   api.add_files(['serverTest.js'], "server");
